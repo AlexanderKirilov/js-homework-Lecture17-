@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>zad1</title>
+</head>
+<body>
+<script>
+var arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]; 
+var count = {};
+for(var x = 0 ; x < arr1.length; x++){
+	let num = arr1[x];
+	count[num] = count[num] ? ++count[num] : 1; 
+}
+
+var maxOcc = 0;
+var maxSymb;
+for(var prop in count){
+	if(maxOcc < count[prop]){
+		maxOcc = count[prop];
+		maxSymb = prop;
+	}
+}
+alert(maxSymb + ' ( ' + maxOcc + ' times )');
+</script>
+</body>
+</html>
